@@ -1,0 +1,65 @@
+<!--list.ejs-->
+<!-- <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+    
+    <% persons.forEach( function(person) { %>
+    
+        <tr><td><%= person.name %></td><td><%= person.age %></td></tr>
+    
+    <% }); %>
+
+</table> -->
+
+<div class="field">
+    <label class="label">Event Name</label>
+    <div class="control">
+        <input class="input" type="text" placeholder="Text input" name="name" required>
+    </div>
+
+    <div class="field">
+        <label class="label">Organizer</label>
+        <div class="control">
+            <div class="select">
+                <select onchange="organizerSelected(this.value)">
+                    <option value="">Please pick a organizer</option>
+                    <option value="HSBS">HSBS</option>
+                    <option value="BEA">BEA</option>
+                    <option value="Google">Google</option>
+                    <option value="Microsoft">Microsoft</option>
+                    <option value="Amazon">Amazon</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label">Start Date</label>
+        <div class="control">
+            <input class="input" type="date" id="date" required>
+        </div>
+
+        <div class="field">
+            <label class="label">End Date</label>
+            <div class="control">
+                <input class="input" type="date" id="date" required>
+            </div>
+
+            <div class="field">
+                <label class="label">Venue</label>
+                <div class="control">
+                    <div class="select">
+                        <select onchange="venueSelected(this.value)">
+                            <option value="">Please pick a venue</option>
+                            <option value="Central">Central</option>
+                            <option value="Kowloon Tong">Kowloon Tong</option>
+                            <option value="Tsim Sha Tsui">Tsim Sha Tsui</option>
+                            <option value="Jordan">Jordan</option>
+                            <option value="Amazon">Mongkok</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    <button class="button is-link" type="submit">Submit</button>
+                </div>

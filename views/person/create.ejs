@@ -1,0 +1,105 @@
+<!--create.ejs-->
+<form action="/person/create" method="post">
+        <div class="field">
+        <label class="label">Event Name</label>
+        <div class="control">
+            <input class="input" type="text" placeholder="Text input" name="name" required>
+        </div>
+    <div class="field">
+        <label class="label">Short Description</label>
+        <div class="control">
+            <input class="input" type="text" placeholder="Text input" name="name" required>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label">Long Description</label>
+        <div class="control">
+            <textarea class="textarea" placeholder="Textarea" rows="2" name="message"></textarea>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label">Image Url</label>
+        <div class="control">
+            <input class="input" type="url" name="name" required>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label">Organizer</label>
+        <div class="control">
+            <div class="select">
+                <select onchange="organizerSelected(this.value)">
+                    <option value="">Select dropdown</option>
+                    <option value="HSBS">HSBS</option>
+                    <option value="BEA">BEA</option>
+                    <option value="Google">Google</option>
+                    <option value="Microsoft">Microsoft</option>
+                    <option value="Amazon">Amazon</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label">Event Date</label>
+        <div class="control">
+            <input class="input" type="date" id="date" required>
+        </div>
+
+        <div class="field">
+            <label class="label">Start Time</label>
+            <div class="control">
+            <input class="input" type="time" id="start-time" required>
+        </div>
+
+        <div class="field">
+            <label class="label">End Time</label>
+            <div class="control">
+            <input class="input" type="time" id="end-time" required>
+        </div>
+
+    <div class="field">
+        <label class="label">Venue</label>
+        <div class="control">
+            <div class="select">
+                <select onchange="venueSelected(this.value)">
+                    <option value="">Select dropdown</option>
+                    <option value="Central">Central</option>
+                    <option value="Kowloon Tong">Kowloon Tong</option>
+                    <option value="Tsim Sha Tsui">Tsim Sha Tsui</option>
+                    <option value="Jordan">Jordan</option>
+                    <option value="Amazon">Mongkok</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label">Quota</label>
+        <div class="control">
+            <input class="input" type="text" placeholder="Text input" name="name" required>
+        </div>
+    </div>
+
+    <div class="field">
+        <div class="control">
+          <label class="checkbox">
+            <input type="checkbox">
+            Highlight Event </a>
+          </label>
+        </div>
+      </div>
+
+    <div class="field">
+        <div class="control">
+            <button class="button is-link" type="submit">Submit</button>
+        </div>
+        <div class="control">
+            <button type="reset" class="button is-link is-light">Cancel</button>
+        </div>
+    </div>
+</form>
+
+
