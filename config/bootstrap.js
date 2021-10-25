@@ -11,11 +11,11 @@
 
 module.exports.bootstrap = async function() {
 
-  if (await Person.count() > 0) {
+  if (await Event.count() > 0) {
       return;
   }
 
-  await Person.createEach([
+  await Event.createEach([
       { name: "Martin Choy", age: 23 },
       { name: "Kenny Cheng", age: 22 }
       // etc.

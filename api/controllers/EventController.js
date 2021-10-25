@@ -1,5 +1,5 @@
 /**
- * PersonController
+ * EventController
  *
  * @description :: Server-side actions for handling incoming requests.
  * @help        :: See https://sailsjs.com/docs/concepts/actions
@@ -9,62 +9,62 @@ module.exports = {
     // action - create
     create: async function (req, res) {
 
-        if (req.method == "GET") return res.view('person/create');
+        if (req.method == "GET") return res.view('event/create');
         
-        var person = await Person.create(req.body).fetch();
+        var event = await Event.create(req.body).fetch();
     
-        return res.status(201).json({ id: person.id });
+        return res.redirect('/event/admin');
     },
     // action - jsjson function
     json: async function (req, res) {
 
-        var everyones = await Person.find();
+        var everyones = await Event.find();
 
         return res.json(everyones);
     },
     // action - list
-    list: async function (req, res) {
+    admin: async function (req, res) {
 
-        var everyones = await Person.find();
+        var everyones = await Event.find();
         
-        return res.view('person/admin', { persons: everyones });
+        return res.view('event/admin', { events: everyones });
     },
    
     
     // action - read
     read: async function (req, res) {
 
-        var thatPerson = await Person.findOne(req.params.id);
+        var thatEvent = await Event.findOne(req.params.id);
 
-        if (!thatPerson) return res.notFound();
+        if (!thatEvent) return res.notFound();
 
-        return res.view('person/read', { person: thatPerson });
+        return res.view('event/read', { event: thatEvent });
     },
     // action - delete 
     delete: async function (req, res) {
 
-        var deletedPerson = await Person.destroyOne(req.params.id);
+        var deletedEvent = await Event.destroyOne(req.params.id);
 
-        if (!deletedPerson) return res.notFound();
+        if (!deletedEvent) return res.notFound();
 
-        return res.ok("Person deleted."); 
+        return res.ok("Event deleted."); 
     },
     // action - update
     update: async function (req, res) {
 
         if (req.method == "GET") {
 
-            var thatPerson = await Person.findOne(req.params.id);
+            var thatEvent = await Event.findOne(req.params.id);
 
-            if (!thatPerson) return res.notFound();
+            if (!thatEvent) return res.notFound();
 
-            return res.view('person/update', { person: thatPerson });
+            return res.view('event/update', { event: thatEvent });
             
         } else {
         
-            var updatedPerson = await Person.updateOne(req.params.id).set(req.body);
+            var updatedEvent = await Event.updateOne(req.params.id).set(req.body);
 
-            if (!updatedPerson) return res.notFound();
+            if (!updatedEvent) return res.notFound();
 
             return res.ok("Record updated");
         }
@@ -79,12 +79,12 @@ module.exports = {
         var parsedAge = parseInt(req.query.age);
         if (!isNaN(parsedAge)) whereClause.age = parsedAge;
         
-        var thosePersons = await Person.find({
+        var thoseEvents = await Event.find({
             where: whereClause,
             sort: 'name'
         });
         
-        return res.view('person/search', { persons: thosePersons });
+        return res.view('event/search', { events: thoseEvents });
     },  
             // action - paginate
     paginate: async function (req, res) {
@@ -92,14 +92,14 @@ module.exports = {
         var limit = Math.max(req.query.limit, 2) || 2;
         var offset = Math.max(req.query.offset, 0) || 0;
 
-        var somePersons = await Person.find({
+        var someEvents = await Event.find({
             limit: limit,
             skip: offset
         });
 
-        var count = await Person.count();
+        var count = await Event.count();
 
-        return res.view('person/paginate', { persons: somePersons, numOfRecords: count });
+        return res.view('event/paginate', { events: someEvents, numOfRecords: count });
     },
 
     //action - admin

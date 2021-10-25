@@ -1,9 +1,9 @@
 <!--paginate.ejs-->
 <table class="table is-bordered is-striped is-hoverable is-fullwidth">
     
-    <% persons.forEach( function(person) { %>
+    <% events.forEach( function(event) { %>
     
-        <tr><td><%= person.name %></td><td><%= person.age %></td></tr>
+        <tr><td><%= event.name %></td><td><%= event.age %></td></tr>
         
     <% }); %>
     
@@ -50,7 +50,7 @@
         var limit = Math.max(parseInt("<%= req.query.limit %>"), 2) || 2;
         var offset = Math.max(parseInt("<%= req.query.offset %>"), 0) || 0;
 
-        var baseUrl = "/person/paginate?limit=" + limit + "&offset=";
+        var baseUrl = "/event/paginate?limit=" + limit + "&offset=";
 
         firstLink.href = baseUrl + 0;
         previousButton.href = baseUrl + (offset - limit);

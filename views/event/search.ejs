@@ -1,18 +1,9 @@
-<!--list.ejs-->
-<!-- <table class="table is-bordered is-striped is-hoverable is-fullwidth">
-    
-    <% persons.forEach( function(person) { %>
-    
-        <tr><td><%= person.name %></td><td><%= person.age %></td></tr>
-    
-    <% }); %>
-
-</table> -->
-
+<div class = "row">
+<div class = "column">
 <div class="field">
     <label class="label">Event Name</label>
     <div class="control">
-        <input class="input" type="text" placeholder="Text input" name="name" required>
+        <input class="input" type="text" placeholder="Text input" name="name">
     </div>
 
     <div class="field">
@@ -34,13 +25,13 @@
     <div class="field">
         <label class="label">Start Date</label>
         <div class="control">
-            <input class="input" type="date" id="date" required>
+            <input class="input" type="date" id="date">
         </div>
 
         <div class="field">
             <label class="label">End Date</label>
             <div class="control">
-                <input class="input" type="date" id="date" required>
+                <input class="input" type="date" id="date">
             </div>
 
             <div class="field">
@@ -63,3 +54,5 @@
                 <div class="control">
                     <button class="button is-link" type="submit">Submit</button>
                 </div>
+            </div>
+        </div>
