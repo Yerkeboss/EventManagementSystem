@@ -1,6 +1,56 @@
-<%= event.name %>, <%= event.age %>
-<form  method="POST" action="/event/delete/<%= event.id %>">
-        
-    <button type="submit">Delete</button>
+    <table class="table is-bordered is-striped is-hoverable is-fullwidth">
 
-</form>
+            <tr>
+                <img src=<%= event.urlimg %> alt="Placeholder image" style="width: 1400px; height: 400px">
+            </tr>
+
+            <tr>
+                <th> Event Name </th>
+                <td><%= event.name %></td>
+            </tr>
+
+            <tr>
+                <th> Short Description </th>
+                <td><%= event.descrb %> </td>
+            </tr>
+            
+            <tr>
+                <th> Long Description </th>
+                <td><%= event.message %> </td>
+            </tr>
+
+            <tr>
+                <th> Organizer </th>
+                <td><%= event.organizer %></td>
+            </tr>
+
+            <tr>
+                <th> Event Date </th>
+                <td><%= event.date %> </td>
+            </tr>
+
+            <tr>
+                <th> Start Time </th>
+                <td><%= event.starttime %></td>
+            </tr>
+
+            <tr>
+                <th> End Time </th>
+                <td><%= event.endtime%></td>
+            </tr>
+
+            <tr>
+                <th> Venue </th>
+                <td><%= event.venue %></td>
+            </tr>
+
+            <tr>
+                <th> Quota </th>
+                <td><%= event.quota %></td>
+            </tr>
+
+            <tr>
+                <th> Highlight Event </th>
+                <td> <%= event.highlight %></td>
+            </tr>
+    </table>     

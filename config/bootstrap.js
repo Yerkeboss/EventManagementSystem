@@ -16,8 +16,7 @@ module.exports.bootstrap = async function() {
   }
 
   await Event.createEach([
-      { name: "Martin Choy", age: 23 },
-      { name: "Kenny Cheng", age: 22 }
+      
       // etc.
   ]);
   // By convention, this is a good place to set up fake data during development.

@@ -22,15 +22,13 @@ module.exports = {
 
         return res.json(everyones);
     },
-    // action - list
+    // action - admin
     admin: async function (req, res) {
 
         var everyones = await Event.find();
         
         return res.view('event/admin', { events: everyones });
     },
-   
-    
     // action - read
     read: async function (req, res) {
 
@@ -38,7 +36,7 @@ module.exports = {
 
         if (!thatEvent) return res.notFound();
 
-        return res.view('event/read', { event: thatEvent });
+        return res.redirect('/event/home');
     },
     // action - delete 
     delete: async function (req, res) {
@@ -47,7 +45,7 @@ module.exports = {
 
         if (!deletedEvent) return res.notFound();
 
-        return res.ok("Event deleted."); 
+        return res.redirect('/event/admin');
     },
     // action - update
     update: async function (req, res) {
@@ -66,7 +64,7 @@ module.exports = {
 
             if (!updatedEvent) return res.notFound();
 
-            return res.ok("Record updated");
+            return res.redirect('/event/admin');
         }
     },
         // search function
@@ -101,8 +99,15 @@ module.exports = {
 
         return res.view('event/paginate', { events: someEvents, numOfRecords: count });
     },
+            // action - home
+    home: async function (req, res) {
 
-    //action - admin
+    var everyones = await Event.find();
+    
+    return res.view('event/home', { events: everyones });
+},
 
 };
+
+
 

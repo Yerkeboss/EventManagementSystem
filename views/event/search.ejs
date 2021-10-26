@@ -10,7 +10,7 @@
         <label class="label">Organizer</label>
         <div class="control">
             <div class="select">
-                <select onchange="organizerSelected(this.value)">
+                <select id = "organizer" name = "organizer">
                     <option value="">Please pick a organizer</option>
                     <option value="HSBS">HSBS</option>
                     <option value="BEA">BEA</option>
@@ -25,20 +25,21 @@
     <div class="field">
         <label class="label">Start Date</label>
         <div class="control">
-            <input class="input" type="date" id="date">
-        </div>
+        <input class="input" type="date" id="startdate">
+    </div>
+    </div>
 
         <div class="field">
             <label class="label">End Date</label>
             <div class="control">
-                <input class="input" type="date" id="date">
+                <input class="input" type="date" id="enddate">
             </div>
 
             <div class="field">
                 <label class="label">Venue</label>
                 <div class="control">
                     <div class="select">
-                        <select onchange="venueSelected(this.value)">
+                        <select id = "venue" name = "venue">
                             <option value="">Please pick a venue</option>
                             <option value="Central">Central</option>
                             <option value="Kowloon Tong">Kowloon Tong</option>
@@ -50,9 +51,9 @@
                 </div>
             </div>
 
-            <div class="field">
+            <div class="field is-grouped">
                 <div class="control">
-                    <button class="button is-link" type="submit">Submit</button>
+                  <button class="button is-link">Submit</button>
                 </div>
             </div>
         </div>

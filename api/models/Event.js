@@ -50,7 +50,12 @@ module.exports = {
 
     quota: {
       type: "string"
+    } ,
+
+    highlight: {
+      type: "string"
     }
+
 
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
     //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
