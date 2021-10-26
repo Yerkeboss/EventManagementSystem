@@ -1,22 +1,28 @@
-<table class="table is-bordered is-striped is-hoverable is-fullwidth">
+<% events.forEach( function(event) { %>
+<div class="home">
+  <div class="card" style="display: flex">
+    <div class="card-image">
+      <figure class="image">
+        <img src=<%= event.urlimg %> 
+      </figure>
+    </div>
+    <div class="card-content">
+      
+      <div class="box content">
+        <%= event.name %>
+      </div>
+
+      <div class="content">
+        <p><a href="/event/read/<%= event.id %>"><%=event.name%></a></p>
+    </div>
+    </div>
+  </div>
+  </div>
+  <% }); %>
     
-  <!-- <tr>
-    <img src=<%= event.urlimg %> alt="Placeholder image" style="width: 1400px; height: 400px">
-</tr>
-
-<tr>
-    <th> Event Name </th>
-    <td><%= event.name %></td>
-</tr> -->
-
-
-
-    <!-- <% events.forEach( function(event) { %> -->
     
-        <tr><td><%= event.urlimg %></td> <td> <%= event.name %></td> </tr>
-           <tr> <a href="/event/home/<%= event.id %>"><%=event.name%></a> </tr>
-        
-    <!-- <% }); %> -->
    
         
-</table>
+
+
+

@@ -36,7 +36,7 @@ module.exports = {
 
         if (!thatEvent) return res.notFound();
 
-        return res.redirect('/event/home');
+        return res.view('event/read', { event: thatEvent })
     },
     // action - delete 
     delete: async function (req, res) {
@@ -101,10 +101,15 @@ module.exports = {
     },
             // action - home
     home: async function (req, res) {
+        var limit = 4;
+        var highlighted = await Event.find({
 
-    var everyones = await Event.find();
-    
-    return res.view('event/home', { events: everyones });
+        where: { highlight: 'on' },
+            limit: limit,
+            sort: 'createdAt'
+        });    
+
+    return res.view('', { events: highlighted });
 },
 
 };

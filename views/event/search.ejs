@@ -1,9 +1,54 @@
-<div class = "row">
-<div class = "column">
-<div class="field">
+<!--create.ejs-->
+<style>
+   .title {        
+    color: black;
+   
+  }     
+  .subtitle{
+    color:black;
+
+  }
+</style>
+            <div class = "columns">
+            <% events.forEach( function(event) { %>
+                <div class = "column">
+                <div class="card">
+                <div class="card-image">
+                 <figure class="image is-4by3">
+                   <img src="<%= event.urlimg %>">
+                 </figure>
+                </div>
+                <div class="card-content">
+                 <div class="media">
+                   <div class="media-left">
+                     <figure class="image is-48x48">
+                       <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                     </figure>
+                   </div>
+                   <div class="media-content">
+                     <p class="title is-4"><%= event.name %></p>
+                     <p class="subtitle is-6"><%= event.organizer %></p>
+                   </div>
+                 </div>
+
+                 <div class="content">
+                    <%= event.name %>
+                    <br>
+                    <%= event.date %>
+                    <br>
+                    <%= event.starttime %> - <%= event.endtime %>
+                  </div>        
+               </div>
+             </div>
+            </div>
+            <% }); %>
+
+    <div class ="column">
+    <div class="field">
     <label class="label">Event Name</label>
     <div class="control">
         <input class="input" type="text" placeholder="Text input" name="name">
+    </div>
     </div>
 
     <div class="field">
@@ -57,3 +102,40 @@
                 </div>
             </div>
         </div>
+        </div>
+    </div>
+
+    <div class = "columns">
+        <div class="pagination" role="navigation" aria-label="pagination">
+            <a class="pagination-previous">Previous</a>
+            <a class="pagination-next">Next page</a>
+            <ul class="pagination-list">
+              <li>
+                <a class="pagination-link" aria-label="Goto page 1">1</a>
+              </li>
+              <li>
+                <a class="pagination-link" aria-label="Goto page 45">2</a>
+              </li>
+              <li>
+                <span class="pagination-ellipsis">&hellip;</span>
+              </li>
+              <li>
+                <a class="pagination-link is-current" aria-label="Page 46" aria-current="page">4</a>
+              </li>
+              <li>
+                <a class="pagination-link" aria-label="Goto page 47">5</a>
+              </li>
+              <li>
+                <span class="pagination-ellipsis">&hellip;</span>
+              </li>
+              <li>
+                <a class="pagination-link" aria-label="Goto page 86">7</a>
+              </li>
+            </ul>
+          </div>
+
+    </div>
+
+
+        
+   

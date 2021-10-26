@@ -33,10 +33,9 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-
+   'GET /': 'EventController.home',
    'GET /event/create': 'EventController.create',
    'POST /event/create': 'EventController.create',
-   'GET /': 'EventController.admin',
    'GET /event':  'EventController.admin',
    'GET /event/admin': 'EventController.admin',
    'GET /event/json': 'EventController.json',
@@ -46,5 +45,5 @@ module.exports.routes = {
    'POST /event/update/:id': 'EventController.update',
    'GET /event/search': 'EventController.search',
    'GET /event/paginate': 'EventController.paginate',
-   'GET /event/home/:id': 'EventController.home',
+  
 };
