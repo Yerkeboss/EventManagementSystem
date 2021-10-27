@@ -53,38 +53,71 @@
     
       <div id="navbarExampleTransparentExample" class="navbar-menu">
         <div class="navbar-start">
-          <a class="navbar-item" href="https://bulma.io/">
+          <a class="navbar-item" href="/">
             Home
           </a>
           <div id="navbarExampleTransparentExample" class="navbar-menu">
             <div class="navbar-start">
-              <a class="navbar-item" href="/person/search">
+              <a class="navbar-item" href="/event/search">
                 Search
               </a>
               <div id="navbarExampleTransparentExample" class="navbar-menu">
                 <div class="navbar-start">
-                  <a class="navbar-item" href="/person/create">
+                  <a class="navbar-item" href="/event/create">
                     Create
                   </a>
                   <div id="navbarExampleTransparentExample" class="navbar-menu">
                     <div class="navbar-start">
-                      <a class="navbar-item" href="/person/admin">
+                      <a class="navbar-item" href="/event/admin">
                         Admin
                       </a>
             </div>
           </div>
         </div>
     </nav>
-    <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-        <Event class="display-4">Event Management System</h1>
-        <p class="lead">HKBU Event Management System is web-based system for department and student societies to broadcast events and activities as well as registration.</p>
+    <div class="container">
+      <div class="a">
+        <h1 class="title is-3">Event Management System</h1>
+        <p class="subtitle is-5">HKBU Event Management System is web-based system for department and student societies to broadcast events and activities as well as registration.</p>
       </div>
-    </div>
-              </div>
-          </div>
-  
       </div>
+
+    
+      <style>
+        .a{
+          background-color: rgb(33, 127, 214);
+          height: 180px;          
+        }
+        .title {        
+          color: white;
+          padding-top:50px;
+          padding-left:60px;
+        }     
+        .subtitle{
+          color:white;
+          padding-top:10px;
+          padding-left:60px;
+        }
+        .title1 {        
+          color: black;
+   
+        }     
+        .subtitle1{
+          color:black;
+        }
+        .img{
+          padding-left:70px;
+        }
+        .column{
+          width: 50%;
+          float: left;
+        }
+        .home{
+          display: grid;
+          grid-template-columns: 100% 100%;
+          grid-gap: 10px;
+        }
+      </style>
       <section class="section">
         <div class="container ">
     
@@ -93,8 +126,7 @@
                     <%- body %>
     
                 </div>
-    
-        </div>
+  
     </section>
 
 

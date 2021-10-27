@@ -1,0 +1,36 @@
+<div class = "columns">
+ <div class = "column">
+<% events.forEach( function(event) { %>
+  <div class = "column">
+    <div class="home">
+      <div class="card" style="display: flex">
+      <div class="card-image">
+      <figure class="image" >
+        <img src=<%= event.urlimg %> style="width: 400px;height: 400px">
+      </figure>
+    </div>
+    <div class="card-content">
+      
+      <div class="box content">
+        <%= event.name %>
+      </div>
+      <div class="content">
+        <p><a href="/event/read/<%= event.id %>"><%=event.name%></a></p>
+    </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+  <% }); %>
+
+</div>
+</div>
+
+    
+    
+   
+        
+
+
+

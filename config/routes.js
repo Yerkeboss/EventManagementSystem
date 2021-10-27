@@ -33,17 +33,18 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-
-   'GET /person/create': 'PersonController.create',
-   'POST /person/create': 'PersonController.create',
-   'GET /': 'PersonController.list',
-   'GET /person':  'PersonController.list',
-   'GET /person/list': 'PersonController.list',
-   'GET /person/json': 'PersonController.json',
-   'GET /person/read/:id': 'PersonController.read',
-   'POST /person/delete/:id': 'PersonController.delete',
-   'GET /person/update/:id': 'PersonController.update',
-   'POST /person/update/:id': 'PersonController.update',
-   'GET /person/search': 'PersonController.search',
-   'GET /person/paginate': 'PersonController.paginate',
+   'GET /': 'EventController.home',
+   'GET /event/create': 'EventController.create',
+   'POST /event/create': 'EventController.create',
+   'GET /event':  'EventController.admin',
+   'GET /event/admin': 'EventController.admin',
+   'GET /event/json': 'EventController.json',
+   'GET /event/read/:id': 'EventController.read',
+   'POST /event/delete/:id': 'EventController.delete',
+   'GET /event/update/:id': 'EventController.update',
+   'POST /event/update/:id': 'EventController.update',
+   'GET /event/search': 'EventController.search',
+   'POST /event/search': 'EventController.paginate',
+   'GET /event/paginate': 'EventController.paginate',
+  
 };
