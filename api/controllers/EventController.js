@@ -68,37 +68,65 @@ module.exports = {
         }
     },
         // search function
-    search: async function (req, res) {
+        // search: async function (req, res) {
         
-        var whereClause = {};
-        
-        if (req.query.name) whereClause.name = { contains: req.query.name };
-        
-        var parsedAge = parseInt(req.query.age);
-        if (!isNaN(parsedAge)) whereClause.age = parsedAge;
-        
-        var thoseEvents = await Event.find({
-            where: whereClause,
-            sort: 'name'
-        });
-        
-        return res.view('event/search', { events: thoseEvents });
-    },  
-            // action - paginate
-    paginate: async function (req, res) {
+        //     var whereClause = {};
+            
+        //     if (req.query.name) whereClause.name = { contains: req.query.name };
+            
+        //     var parsedAge = parseInt(req.query.age);
+        //     if (!isNaN(parsedAge)) whereClause.age = parsedAge;
+            
+        //     var thoseEvents = await Event.find({
+        //         where: whereClause,
+        //         sort: 'name'
+        //     });
+            
+        //     return res.view('event/search', { events: thoseEvents });
+        // },  
 
-        var limit = Math.max(req.query.limit, 2) || 2;
-        var offset = Math.max(req.query.offset, 0) || 0;
-
-        var someEvents = await Event.find({
-            limit: limit,
-            skip: offset
-        });
-
-        var count = await Event.count();
-
-        return res.view('event/paginate', { events: someEvents, numOfRecords: count });
-    },
+        search: async function(req, res) {
+            var limit = Math.max(req.query.limit, 2) || 2;
+            var skip = Math.max(req.query.offset, 0) || 0;
+            var whereClause = {};
+    
+    
+            var dateFrom = req.param.startdate;
+            var dateTo = req.param.enddate;
+    
+            if (dateFrom) whereClause.date = { '>=': new Date(dateFrom).getTime() }
+            if (dateTo) whereClause.date = { '>=': new Date(dateTo).getTime() }
+            if (req.query.name) whereClause.name = { contains: req.query.name };
+            if (req.query.organizer) whereClause.organizer = { contains: req.query.organizer };
+            if (req.query.venue) whereClause.venue = { contains: req.query.venue };
+    
+    
+            var events = await Event.find({
+                where: whereClause,
+                sort: 'createdAt',
+                limit,
+                skip
+            });
+    
+            var numOfRecords = await Event.count();
+    
+            return res.view('event/search', { events, numOfRecords });
+        },
+                // action - paginate
+        paginate: async function (req, res) {
+    
+            var limit = Math.max(req.query.limit, 2) || 2;
+            var offset = Math.max(req.query.offset, 0) || 0;
+    
+            var someEvents = await Event.find({
+                limit: limit,
+                skip: offset
+            });
+    
+            var count = await Event.count();
+    
+            return res.view('event/search', { events: someEvents, numOfRecords: count });
+        },
             // action - home
     home: async function (req, res) {
         var limit = 4;
@@ -108,7 +136,6 @@ module.exports = {
             limit: limit,
             sort: 'createdAt'
         });    
-
     return res.view('', { events: highlighted });
 },
 

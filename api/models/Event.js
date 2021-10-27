@@ -48,6 +48,14 @@ module.exports = {
       type: "string"
     } , 
 
+    startdate: {
+      type: 'string', columnType: 'date'
+    } , 
+
+    enddate: {
+      type: 'string', columnType: 'date'
+    } , 
+
     quota: {
       type: "string"
     } ,
@@ -55,6 +63,8 @@ module.exports = {
     highlight: {
       type: "string"
     }
+
+    
 
 
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗

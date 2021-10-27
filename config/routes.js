@@ -44,6 +44,7 @@ module.exports.routes = {
    'GET /event/update/:id': 'EventController.update',
    'POST /event/update/:id': 'EventController.update',
    'GET /event/search': 'EventController.search',
+   'POST /event/search': 'EventController.paginate',
    'GET /event/paginate': 'EventController.paginate',
   
 };
