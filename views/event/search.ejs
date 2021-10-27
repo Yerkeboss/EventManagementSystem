@@ -3,11 +3,12 @@
             <% events.forEach( function(event) { %>
                 <div class = "column">
                 <div class="card">
+                  <a href="/event/read/<%= event.id %>">
                 <div class="card-image">
                  <figure class="image is-4by3">
-                  <a href="/event/read/<%= event.id %>">
                    <img src="<%= event.urlimg %>">
                  </figure>
+                </a>
                 </div>
                 <div class="card-content">
                  <div class="media">

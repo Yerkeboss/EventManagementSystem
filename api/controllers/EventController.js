@@ -67,23 +67,6 @@ module.exports = {
             return res.redirect('/event/admin');
         }
     },
-        // search function
-        // search: async function (req, res) {
-        
-        //     var whereClause = {};
-            
-        //     if (req.query.name) whereClause.name = { contains: req.query.name };
-            
-        //     var parsedAge = parseInt(req.query.age);
-        //     if (!isNaN(parsedAge)) whereClause.age = parsedAge;
-            
-        //     var thoseEvents = await Event.find({
-        //         where: whereClause,
-        //         sort: 'name'
-        //     });
-            
-        //     return res.view('event/search', { events: thoseEvents });
-        // },  
 
         search: async function(req, res) {
             var limit = Math.max(req.query.limit, 2) || 2;

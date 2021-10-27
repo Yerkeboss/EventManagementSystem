@@ -1,13 +1,16 @@
-    <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+            <div class = "columns">
+            <div class = "column">
+                <div class = "img">
+                <img src=<%= event.urlimg %> style="width: 500px;height: 450px">
+           </div>
+        </div>
 
-            <tr>
-                <img src=<%= event.urlimg %> alt="Placeholder image" style="width: 1400px; height: 400px">
-            </tr>
-
-            <tr>
-                <th> Event Name </th>
-                <td><%= event.name %></td>
-            </tr>
+           <div class = "column">
+           <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+           
+               <tr>
+            <th> Event Name </th> <td><%= event.name %></td>
+               </tr> 
 
             <tr>
                 <th> Short Description </th>
@@ -53,4 +56,6 @@
                 <th> Highlight Event </th>
                 <td> <%= event.highlight %></td>
             </tr>
-    </table>     
+        </table>     
+    </div>
+</div>
