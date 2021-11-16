@@ -1,0 +1,38 @@
+  <form action="/event/registered" method="get">
+    <div class="columns">
+      <% events.forEach( function(event) { %>
+      <div class="column">
+        <div class="card">
+          <a href="/event/read/<%= event.id %>">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="<%= event.urlimg %>">
+              </figure>
+          </a>
+        </div>
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-48x48">
+                <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title1 is-4"><%= event.name %></p>
+              <p class="subtitle1 is-6"><%= event.organizer %></p>
+            </div>
+          </div>
+
+          <div class="content">
+            <%= event.name %>
+            <br>
+            <%= event.date %>
+            <br>
+            <%= event.starttime %> - <%= event.endtime %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% }); %>
+  </form>
+
