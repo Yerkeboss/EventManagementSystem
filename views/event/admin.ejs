@@ -1,17 +1,20 @@
-<table class="table is-bordered is-striped is-hoverable is-fullwidth" >
-    
-    <tr>
-        <th>ID</th>
-        <th>Event</th>
-        <th>Organizer</th>
-      </tr>
+<table class="table is-bordered is-striped is-hoverable is-fullwidth">
 
-    <% events.forEach( function(event) { %>
-    
-        <tr><td><%= event.id %></td><td><a href="/event/update/<%= event.id %>"><%=event.name%></a> </td><td><%= event.organizer %></td></tr>
-        
-    <% }); %>
-   
-        
+  <tr>
+    <th>ID</th>
+    <th>Event</th>
+    <th>Organizer</th>
+  </tr>
+
+  <% events.forEach( function(event) { %>
+
+  <tr>
+    <td><%= event.id %></td>
+    <td><a href="/event/update/<%= event.id %>"><%=event.name%></a> </td>
+    <td><%= event.organizer %></td>
+  </tr>
+
+  <% }); %>
+
+
 </table>
-

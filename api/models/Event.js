@@ -7,76 +7,83 @@
 
 module.exports = {
 
-  attributes: {
+    attributes: {
 
-    //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
-    //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
-    //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
-    name: {
-      type: "string"
-    } , 
+      //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
+      //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
+      //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
+      name: {
+        type: "string"
+      },
 
-    descrb: {
-      type: "string"
-    } , 
+      descrb: {
+        type: "string"
+      },
 
-    message: {
-      type: "string"
-    } , 
+      message: {
+        type: "string"
+      },
 
-    urlimg: {
-      type: "string"
-    } , 
+      urlimg: {
+        type: "string"
+      },
 
-    organizer: {
-      type: "string"
-    } , 
+      organizer: {
+        type: "string"
+      },
 
-    date: {
-      type: 'string', columnType: 'date'
-    } , 
+      date: {
+        type: 'string',
+        columnType: 'date'
+      },
 
-    starttime: {
-      type: 'string', columnType: 'dateTime'
-    } , 
+      starttime: {
+        type: 'string',
+        columnType: 'dateTime'
+      },
 
-    endtime: {
-      type: 'string', columnType: 'dateTime'
-    } , 
+      endtime: {
+        type: 'string',
+        columnType: 'dateTime'
+      },
 
-    venue: {
-      type: "string"
-    } , 
+      venue: {
+        type: "string"
+      },
 
-    startdate: {
-      type: 'string', columnType: 'date'
-    } , 
+      startdate: {
+        type: 'string',
+        columnType: 'date'
+      },
 
-    enddate: {
-      type: 'string', columnType: 'date'
-    } , 
+      enddate: {
+        type: 'string',
+        columnType: 'date'
+      },
 
-    quota: {
-      type: "string"
-    } ,
+      quota: {
+        type: "string"
+      },
 
-    highlight: {
-      type: "string"
-    }
+      highlight: {
+        type: "string"
+      },
 
-    
-
-
-    //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
-    //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
-    //  ╚═╝╩ ╩╚═╝╚═╝═╩╝╚═╝
+      
 
 
-    //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
-    //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
-    //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
 
-  },
+      //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
+      //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
+      //  ╚═╝╩ ╩╚═╝╚═╝═╩╝╚═╝
 
-};
 
+      //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
+      //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
+      //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
+      consultants: {
+        collection: 'User',
+        via: 'clients'
+      }
+    },
+    };

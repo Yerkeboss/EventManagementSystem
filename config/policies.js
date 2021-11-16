@@ -8,7 +8,7 @@
  * https://sailsjs.com/docs/concepts/policies
  */
 
-module.exports.policies = {
+ module.exports.policies = {
 
   /***************************************************************************
   *                                                                          *
@@ -18,5 +18,7 @@ module.exports.policies = {
   ***************************************************************************/
 
   // '*': true,
-
+  EventController: {
+    create: 'isAdmin'
+  }
 };

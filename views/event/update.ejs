@@ -1,123 +1,126 @@
 <!--update.ejs-->
 <form action="/event/update/<%= event.id %>" method="post">
 
-    <div class = "row">
-        <div class = "column">
-            <div class="field">
-            <label class="label">Event Name</label>
-            <div class="control">
-                <input class="input" type="text" placeholder="Text input" name="name" value ="<%= event.name %>" required>
-            </div>
-            </div>
-        <div class="field">
-            <label class="label">Short Description</label>
-            <div class="control">
-                <input class="input" type="text" placeholder="Text input" name="descrb" value = "<%= event.descrb %>" required>
-            </div>
-        </div>
-    
-        <div class="field">
-            <label class="label">Long Description</label>
-            <div class="control">
-                <textarea class="textarea" placeholder="Textarea" rows="2" name="message" required> <%= event.message %> </textarea> 
-            </div>
-        </div>
-    
-        <div class="field">
-            <label class="label">Image Url</label>
-            <div class="control">
-                <input class="input" type="text" name="urlimg" value = "<%= event.urlimg %>" required>
-            </div>
-        </div>
-    
-        <div class="field">
-            <label class="label">Organizer</label>
-            <div class="control">
-                <name class="select">
-                <select id = "organizer" name = "organizer">
-                        <option value="<%= event.organizer %>"><%= event.organizer %></option>
-                        <option value="HSBS">HSBS</option>
-                        <option value="BEA">BEA</option>
-                        <option value="Google">Google</option>
-                        <option value="Microsoft">Microsoft</option>
-                        <option value="Amazon">Amazon</option>
-                    </select>
-                </div>
-            </div>
-
-        </div>
-        </div>
-    
-    <div class = "column">
-        <div class="field">
-            <label class="label">Event Date</label>
-            <div class="control">
-                <input class="input" type="date" id="date" value = "<%= event.date %>" required>
-            </div>
-            </div>
-    
-            <div class="field">
-                <label class="label">Start Time</label>
-                <div class="control">
-                <input class="input" type="time" id="starttime" value = "<%= event.starttime %>" required>
-            </div>
-            </div>
-    
-            <div class="field">
-                <label class="label">End Time</label>
-                <div class="control">
-                <input class="input" type="time" id="endtime" value = "<%= event.endtime %>" required>
-            </div>
-            </div>
-    
-            <div class="field">
-                <label class="label">Venue</label>
-                <div class="control">
-                <div class="select">
-                <select id = "venue" name = "venue">
-                        <option value="<%= event.venue %>"><%= event.venue %></option>
-                        <option value="Central">Central</option>
-                        <option value="Kowloon Tong">Kowloon Tong</option>
-                        <option value="Tsim Sha Tsui">Tsim Sha Tsui</option>
-                        <option value="Jordan">Jordan</option>
-                        <option value="Amazon">Mongkok</option>
-                </select>
-                </div>
-            </div>
-        </div>
-    
-        <div class="field">
-            <label class="label">Quota</label>
-            <div class="control">
-                <input class="input" type="text" placeholder="Text input" name="quota" value = "<%= event.quota %>" required>
-            </div>
-        </div>
-    
-        <div class="field">
-            <div class="control">
-              <label class="checkbox">
-                <input class ="checkbox" type ="checkbox" name = "highlight">
-                Highlight Event </a>
-              </label>
-            </div>
-          </div>
-
-    
-          <div class="field is-grouped">
-            <div class="control">
-              <button class="button is-link">Update</button>
-            </div>
-            
-          </div>
-        </div>
-    
-    </form>
-
-
-    <form action="/event/delete/<%= event.id %>" method="post">
+  <div class="row">
+    <div class="column">
+      <div class="field">
+        <label class="label">Event Name</label>
         <div class="control">
+          <input class="input" type="text" placeholder="Text input" name="name" value="<%= event.name %>" required>
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Short Description</label>
+        <div class="control">
+          <input class="input" type="text" placeholder="Text input" name="descrb" value="<%= event.descrb %>" required>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Long Description</label>
+        <div class="control">
+          <textarea class="textarea" placeholder="Textarea" rows="2" name="message"
+            required> <%= event.message %> </textarea>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Image Url</label>
+        <div class="control">
+          <input class="input" type="text" name="urlimg" value="<%= event.urlimg %>" required>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Organizer</label>
+        <div class="control">
+          <name class="select">
+            <select id="organizer" name="organizer">
+              <option value="<%= event.organizer %>"><%= event.organizer %></option>
+              <option value="HSBS">HSBS</option>
+              <option value="BEA">BEA</option>
+              <option value="Google">Google</option>
+              <option value="Microsoft">Microsoft</option>
+              <option value="Amazon">Amazon</option>
+            </select>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="field">
+      <label class="label">Event Date</label>
+      <div class="control">
+        <input class="input" type="date" id="date" value="<%= event.date %>" required>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Start Time</label>
+      <div class="control">
+        <input class="input" type="time" id="starttime" value="<%= event.starttime %>" required>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">End Time</label>
+      <div class="control">
+        <input class="input" type="time" id="endtime" value="<%= event.endtime %>" required>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Venue</label>
+      <div class="control">
+        <div class="select">
+          <select id="venue" name="venue">
+            <option value="<%= event.venue %>"><%= event.venue %></option>
+            <option value="Central">Central</option>
+            <option value="Kowloon Tong">Kowloon Tong</option>
+            <option value="Tsim Sha Tsui">Tsim Sha Tsui</option>
+            <option value="Jordan">Jordan</option>
+            <option value="Amazon">Mongkok</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Quota</label>
+      <div class="control">
+        <input class="input" type="text" placeholder="Text input" name="quota" value="<%= event.quota %>" required>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="control">
+        <label class="checkbox">
+          <%  if(event.highlight ==='on'){ %>
+          <input type="checkbox" name="highlight" checked>
+          <%} else {%>
+          <input type="checkbox" name="highlight" unchecked>
+          <%}%>
+          Highlight Event
+  </label>
+      </div>
+    </div>
+
+
+    <div class="field is-grouped">
+      <div class="control">
+        <button class="button is-link">Update</button>
+      </div>
+
+    </div>
+  </div>
+
+</form>
+
+
+<form action="/event/delete/<%= event.id %>" method="post">
+          <div class="control">
             <button class="button is-link is-light">Delete</button>
           </div>
-    </form>
-
-    
+</form>
